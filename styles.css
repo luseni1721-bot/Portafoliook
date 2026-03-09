@@ -1,11 +1,15 @@
 /* CSS Variables matching user requested palette */
 :root {
-    --primary-color: #2EC4B6; /* Azul aguamarina */
+    --primary-color: #2EC4B6;
+    /* Azul aguamarina */
     --primary-dark: #239c91;
-    --dark-color: #2F2F2F; /* Gris oscuro */
-    --light-color: #F5F5F5; /* Gris claro */
-    --white-color: #FFFFFF; /* Blanco */
-    --text-color: #444444;
+    --dark-color: #8b8888;
+    /* Gris oscuro */
+    --light-color: #F5F5F5;
+    /* Gris claro */
+    --white-color: #131212;
+    /* Blanco */
+    --text-color: #130e0e;
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 15px 30px rgba(46, 196, 182, 0.15);
@@ -51,14 +55,24 @@ img {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--dark-color);
     font-weight: 700;
     line-height: 1.2;
 }
 
-.mt-4 { margin-top: 1.5rem; }
-.mt-5 { margin-top: 3rem; }
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
 
 /* Layout Containers */
 .container {
@@ -134,6 +148,7 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -141,15 +156,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @keyframes pulse-border {
-    0% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(46, 196, 182, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(46, 196, 182, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 196, 182, 0);
+    }
 }
 
 /* Navbar */
@@ -322,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     transition: var(--transition);
     z-index: -1;
 }
@@ -381,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow-md);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Profile Section */
@@ -640,7 +671,7 @@ h1, h2, h3, h4, h5, h6 {
 .exp-body hr {
     border: none;
     height: 1px;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     margin: 1rem 0;
 }
 
@@ -688,7 +719,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50px;
     font-weight: 600;
     color: var(--primary-color);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .ref-phone:hover {
@@ -731,7 +762,7 @@ h1, h2, h3, h4, h5, h6 {
 .social-icon {
     width: 45px;
     height: 45px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     color: var(--white-color);
     border-radius: 50%;
     display: flex;
@@ -748,7 +779,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #888;
     font-size: 0.9rem;
 }
@@ -793,7 +824,7 @@ h1, h2, h3, h4, h5, h6 {
     .name-title {
         font-size: 2.8rem;
     }
-    
+
     .experience-grid {
         grid-template-columns: 1fr;
     }
@@ -803,7 +834,7 @@ h1, h2, h3, h4, h5, h6 {
     .menu-toggle {
         display: block;
     }
-    
+
     .nav-list {
         position: fixed;
         top: 0;
@@ -815,36 +846,36 @@ h1, h2, h3, h4, h5, h6 {
         justify-content: center;
         align-items: center;
         transition: var(--transition);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .nav-list.active {
         right: 0;
     }
-    
+
     .nav-link {
         color: var(--dark-color);
         font-size: 1.5rem;
     }
-    
+
     .navbar.scrolled .menu-toggle {
         color: var(--dark-color);
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .btn {
         width: 100%;
         justify-content: center;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -855,11 +886,11 @@ h1, h2, h3, h4, h5, h6 {
     .name-title {
         font-size: 2.2rem;
     }
-    
+
     .professional-title {
         font-size: 1.2rem;
     }
-    
+
     .profile-img-wrapper {
         width: 180px;
         height: 180px;
