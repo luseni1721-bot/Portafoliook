@@ -282,6 +282,11 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/573118882582" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="script.js"></script>
     <!-- Chatbase Widget CSS (Forzar a la izquierda inferior) -->
     <style>
@@ -299,11 +304,81 @@
                 bottom: 1rem !important;
             }
         }
+
+        /* Floating WhatsApp Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe57;
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+        }
     </style>
 
     <!-- Chatbase Snippet proporcionado por el usuario -->
     <script>
     (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="F5FJxoNGtQU1ff_RqPbvH";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+
+    <!-- Chatbase Identity Validation - Client Code -->
+    <script>
+    // --- SERVER LOGIC (Node.js) ---
+    // El portafolio actual es estático (HTML/JS), por lo que no cuenta con un backend en Node.js
+    // Si tienes un servidor, este es el código que necesitas usar:
+    /*
+    const jwt = require('jsonwebtoken');
+    const secret = process.env.CHATBOT_IDENTITY_SECRET;
+    const user = await getSignedInUser();
+    const token = jwt.sign(
+        { 
+            user_id: user.id,
+            email: user.email,
+            stripe_accounts: user.stripe_accounts,
+        }, 
+        secret, 
+        { expiresIn: '1h' }
+    );
+    */
+
+    // --- CLIENT LOGIC ---
+    // Cuando el servidor genere el token, debes pasarlo de esta forma:
+    async function setupChatbaseIdentity() {
+        try {
+            // Descomentar y ajustar cuando tengas backend
+            // const token = await getUserToken(); // Función para obtener el token del backend
+            // window.chatbase('identify', { token });
+        } catch (error) {
+            console.error("Error setting up Chatbase identity", error);
+        }
+    }
+    // setupChatbaseIdentity();
     </script>
 </body>
 </html>
